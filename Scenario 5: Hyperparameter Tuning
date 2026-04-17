@@ -1,0 +1,21 @@
+Task: Use GridSearchCV to find the best max_depth (values: [3, 5, 7]) 
+and n_estimators (values: [50, 100]) for a Random Forest classifier.
+
+
+----------------------------------------------------------------------------------------------
+
+from sklearn.ensemble import RandomForestClassifier as RF
+from sklearn.model_selection import GridSearchCV as GS
+
+def f(x, y):
+    m = RF()
+    p = {"max_depth": [3, 5, 7], "n_estimators": [50, 100]}
+    g = GS(m, p, cv=5)
+    g.fit(x, y)
+    return g.best_params_
+
+# example
+# bp = f(X, y) 
+# print(bp)
+
+------------------------------------------------------------------------------------------------
