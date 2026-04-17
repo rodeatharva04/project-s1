@@ -1,0 +1,22 @@
+Task: Implement a custom metric weighted_accuracy where class 0 has a weight 
+of 1 and class 1 has a weight of 2.
+
+
+------------------------------------------------------------------------------------------------
+
+import numpy as n
+
+def wa(y, p):
+    y = n.array(y) 
+    p = n.array(p)
+        
+
+    w = n.where(y == 1, 2, 1)  
+    c = (y == p).astype(int)
+    
+    return (w * c).sum() / w.sum()  
+
+#example
+#print(wa([0,1,1,0], [0,1,0,0]))
+
+-------------------------------------------------------------------------------------------------
