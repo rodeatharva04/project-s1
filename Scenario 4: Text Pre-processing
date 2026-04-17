@@ -1,0 +1,21 @@
+Task: Clean a text column in a DataFrame by:
+
+1. Converting to lowercase.
+
+2. Removing special characters (e.g., !, @).
+
+3. Tokenizing the text.
+
+
+-------------------------------------------------------------------------------------------
+
+import pandas as p
+import re
+
+def f(d):
+    d["txt"] = d["txt"].str.lower()
+    d["txt"] = d["txt"].apply(lambda x: re.sub(r'[^a-z0-9\s]', '', x))
+    d["tok"] = d["txt"].apply(lambda x: x.split())
+    return d
+
+---------------------------------------------------------------------------------------------
