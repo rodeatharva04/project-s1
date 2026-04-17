@@ -1,0 +1,25 @@
+Task: Use the Gemini API to generate a response in JSON format for the query: 
+"List 3 benefits of Python for data science." 
+Handle cases where the response isn’t valid JSON.
+
+---------------------------------------------------------------------------------------------
+
+import json 
+import google.generativeai as g
+
+def f(q):
+    g.configure(api_key="wheruiheguiogerigfksoifn(put valid api key)")
+    m = g.GenerativeModel("gemini-2.5-pro")
+    
+    p = "give answer in json with key 'ans' as list of 3 points: " + q
+    r = m.generate_content(p).text
+    
+    try:
+        return json.loads(r) 
+    except: 
+        return {"ans": [r]}
+
+#ex
+#print(f("List 3 benefits of Python for data science."))
+
+-----------------------------------------------------------------------------------------------
