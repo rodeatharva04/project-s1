@@ -1,0 +1,30 @@
+Scenario 2: Logging DecoratorTask: Create a decorator @log_execution_time 
+that logs the time taken to execute a function. Use it to log the runtime of 
+a sample function calculate_sum(n)
+that returns the sum of numbers from 1 to n.
+
+
+-----------------------------------------------------------------------------------------------------
+
+import time as t
+
+def log(f):
+    def w(*a, **k):
+        s = t.time()
+        r = f(*a, **k)
+        e = t.time()
+        print("t:", e - s)
+        return r
+    return w
+
+@log
+def cs(n):
+    s = 0
+    for i in range(1, n+1):
+        s += i
+    return s
+
+print(cs(1000000))
+
+
+---------------------------------------------------------------------------------------------------------
