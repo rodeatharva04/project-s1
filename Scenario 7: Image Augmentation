@@ -1,0 +1,21 @@
+Task: Use TensorFlow/Keras to create an image augmentation pipeline with random rotations (±20 degrees), 
+horizontal flips, and zoom (0.2x).
+
+-------------------------------------------------------------------------------------------------
+
+import tensorflow as t
+
+
+def f():
+    a = t.keras.Sequential([
+        t.keras.layers.RandomRotation(0.11),   # ~20 deg
+        t.keras.layers.RandomFlip("horizontal"),
+        t.keras.layers.RandomZoom(0.2)
+    ])
+    return a
+
+#example
+# aug = f()
+#out = aug(img)
+
+--------------------------------------------------------------------------------------------------
