@@ -1,0 +1,10 @@
+Task: Write a prompt to summarize a news article into 2 sentences. 
+If the summary exceeds 50 words, 
+truncate it to the nearest complete sentence.
+
+
+----------------------------------------------------------------------------------------------------
+
+Summarize the following news article in exactly 2 sentences. Keep it under 50 words. If it exceeds 50 words, truncate to the nearest complete sentence.
+
+-----------------------------------------------------------------------------------------------------
