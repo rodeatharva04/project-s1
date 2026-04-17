@@ -1,0 +1,17 @@
+Scenario 1: Data ValidationTask: Write a function validate_data(data) 
+that checks if a list of dictionaries 
+(e.g., [{"name": "Alice", "age": 30}, {"name": "Bob", "age": "25"}]) 
+contains valid integer values for the "age" key. 
+Return a list of invalid entries.
+
+
+--------------------------------------------------------------------------------------
+
+def vd(d):
+    bad = []
+    for x in d:
+        if "age" not in x or type(x["age"]) != int:
+            bad.append(x)
+    return bad
+
+---------------------------------------------------------------------------------------
